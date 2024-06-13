@@ -1,0 +1,15 @@
+#! /bin/bash
+
+
+
+#! /bin/bash
+
+# necessary if used for the Allied Vision drivers
+export GENICAM_GENTL64_PATH="/opt/Vimba_v4.2_ARM64/Vimba_4_2/VimbaUSBTL/CTI/arm_64bit"
+
+# add efficientdet and utils to the PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:"detection/efficientdet"
+export PYTHONPATH=$PYTHONPATH:"../"
+
+pudb arm_server.py --detector /tmp/model.trt --image_size 1280x720 --detector_size 960x540 --detection_frequency 1 --main_image_scale 0.5 --cam_type load --image_load_path /media/nvidia/EMPTY/seadronessee_v2/images/test --saliency
+
