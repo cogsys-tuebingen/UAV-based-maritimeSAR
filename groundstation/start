@@ -1,0 +1,2 @@
+PYTHONPATH=$PYTHONPATH:.:object_detector python3 main.py
+
